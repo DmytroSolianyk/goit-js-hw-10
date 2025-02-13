@@ -1,0 +1,1 @@
+*{margin:0;padding:0}body{padding:20px}.form{width:300px;display:flex;flex-direction:column;margin-top:20px}.form>label{display:flex;flex-direction:column}.form>label>input{padding:8px}.form>fieldset{margin-top:16px;display:flex;justify-content:space-around;padding:8px}.form>button{margin-top:8px;padding:3px}
