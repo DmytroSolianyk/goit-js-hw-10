@@ -68,7 +68,6 @@ function startCountdown(endTime) {
 
     if (distance < 0) {
       clearInterval(currentTimer);
-      lockTimer(false);
       return;
     }
     updateDataTimer(convertMs(distance));
