@@ -60,7 +60,8 @@ document.querySelector('[data-start]').addEventListener('click', function () {
 });
 
 function startCountdown(endTime) {
-  lockTimer(true);
+  document.querySelector('[data-start]').disabled = true;
+  document.querySelector('#datetime-picker').disabled = true;
 
   let currentTimer = setInterval(() => {
     const now = new Date().getTime();
@@ -68,6 +69,7 @@ function startCountdown(endTime) {
 
     if (distance < 0) {
       clearInterval(currentTimer);
+      document.querySelector('#datetime-picker').disabled = false;
       return;
     }
     updateDataTimer(convertMs(distance));
@@ -88,9 +90,4 @@ function updateDataTimer(dateValue) {
   document.querySelector('[data-seconds]').innerText = seconds
     .toString()
     .padStart(2, '0');
-}
-
-function lockTimer(isDisabled) {
-  document.querySelector('[data-start]').disabled = isDisabled;
-  document.querySelector('#datetime-picker').disabled = isDisabled;
 }
